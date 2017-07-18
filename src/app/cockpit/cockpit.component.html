@@ -8,7 +8,12 @@
     <!--We are assigning local reference to the input element-->
     <label>Serve Content</label>
     
-    <input type="text" class="form-control" [(ngModel)] = 'newServerContent'>
+    <!--<input type="text" class="form-control" [(ngModel)] = 'newServerContent'>-->
+    <input type="text" 
+    class="form-control" 
+    #serverContentInput>
+    <!--We have assigned local reference to this input as we assigned for the above input.
+    but here we assigned it to use it as @ViewChild()-->
     <br>
     <!--Now, we can pass the input element to the click evenet function. so we will have the whole input element 
     and we can use its .value in the .ts code to store or display the value.-->
