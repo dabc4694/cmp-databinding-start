@@ -6,7 +6,15 @@
 <div class="row">
   <div class="col-xs-12">
     <app-server-element  *ngFor = "let serverElement of serverElements"
-    [srvElement]= 'serverElement'></app-server-element>
+    [srvElement]= 'serverElement'>
+    <!--Whatever we add here between our own app component tag will not be availbale into
+    the html code of that component, so to use below code in "server-element" 
+    component, we will use ng-content directive there in server-element's html file-->
+    <p> 
+      <strong *ngIf = "serverElement.type === 'server'" style="color:chartreuse">{{serverElement.content}}</strong>
+      <em *ngIf = "serverElement.type === 'blueprint'" style="color:blue">{{serverElement.content}}</em>
+    </p>
+    </app-server-element>
   </div>
 </div>
 </div>
